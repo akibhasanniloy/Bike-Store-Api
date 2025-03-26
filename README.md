@@ -1,4 +1,4 @@
-# 🚲 Bike Store API
+# Bike Store API
 
 A RESTful API built with **Express.js**, **TypeScript**, **MongoDB**, and **Mongoose** to manage a bike store. The API provides complete **CRUD operations** for managing bikes and orders while ensuring **data integrity** through Mongoose schema validation.
 
@@ -42,6 +42,7 @@ git clone [https://github.com/your-username/bike-store-api.git](https://github.c
 cd bike-store-api
 ```
 <br>
+
 ### Live Server: 
 
 ```bash
