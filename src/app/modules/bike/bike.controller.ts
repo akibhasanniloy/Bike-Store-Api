@@ -94,21 +94,22 @@ const deleteABike = async (req: Request, res: Response) => {
   }
 };
 
-const placeOrder = async (req: Request, res: Response) => {
+const placeOrder = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, product, quantity, totalPrice } = req.body;
     const bike = await bikeServices.getASingleBikeFromDB(product);
+
     if (!bike) {
-      return res.status(404).json({
+      res.status(404).json({
         success: false,
         message: 'Bike not found',
       });
+      return;
     }
 
     if (bike.quantity < quantity) {
-      return res
-        .status(400)
-        .json({ status: false, message: 'Insufficient stock' });
+      res.status(400).json({ success: false, message: 'Insufficient stock' });
+      return;
     }
 
     const order = await bikeServices.createOrder({
@@ -124,7 +125,7 @@ const placeOrder = async (req: Request, res: Response) => {
       inStock: updatedQuantity > 0,
     });
 
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       message: 'Order placed successfully',
       data: order,
