@@ -42,7 +42,10 @@ git clone [https://github.com/your-username/bike-store-api.git](https://github.c
 cd bike-store-api
 ```
 <br>
-Live Server: https://akibhasanniloy.github.io/Bike-Store-Api/
+### Live Server: 
+```bash
+https://bike-store-tau.vercel.app/
+```
 <br>
 Video Explanation Link: https://youtu.be/q8KPVQ2LQO0
 Be mindful video explanation in Bangla, turn on cc for English subtitles
